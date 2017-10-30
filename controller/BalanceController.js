@@ -10,12 +10,16 @@ function getBalance(request, response) {
     var responseMsg  = "*Address:* " + request.body.text + "\n";
     responseMsg += "*Currency:* Ethereum\n";
     responseMsg += "*Amount:* " + convertToEthereum(parseInt(data.result, 10)) + " ETH";
-    response.status(200).send(responseMsg);
+    var json = {
+        "response_type": "in_channel",
+        "text": responseMsg,
+    }
+    response.status(200).send(json);
   });
 }
 
 function convertToEthereum(amount) {
-  return (amount / 1000000);
+  return (amount / 1000000000000);
 }
 
 module.exports = router;
