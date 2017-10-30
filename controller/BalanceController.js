@@ -6,6 +6,7 @@ router.get("/", getBalance);
 
 function getBalance(request, response) {
   console.log(request.url);
+  console.log(request.path);
   BalanceService.getEthereumBalance("1234").then((data) => {
     response.status(200).send(data);
   });
