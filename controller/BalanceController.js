@@ -2,7 +2,7 @@ var express = require("express");
 var router = express.Router();
 var BalanceService = require("../service/BalanceService");
 
-router.get("/", getBalance);
+router.post("/", getBalance);
 
 function getBalance(request, response) {
   console.log(request.url);
