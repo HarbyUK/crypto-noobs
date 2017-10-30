@@ -6,8 +6,10 @@ router.post("/", getBalance);
 
 function getBalance(request, response) {
   console.log(request.body);
-  BalanceService.getEthereumBalance("1234").then((data) => {
-    response.status(200).send(data);
+  BalanceService.getEthereumBalance(request.body.text).then((data) => {
+    var responseMsg = "Currency: Ethereum\n";
+    responseMsg += "Amount: " + data.amount / 1000000 + "ETH";
+    response.status(200).send(responseMsg);
   });
 }
 
