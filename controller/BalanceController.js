@@ -7,7 +7,7 @@ router.post("/", getBalance);
 function getBalance(request, response) {
   console.log(request.body);
   BalanceService.getEthereumBalance(request.body.text).then((data) => {
-    var responseMsg  = "*Address:* " + request.body.text;
+    var responseMsg  = "*Address:* " + request.body.text + "\n";
     responseMsg += "*Currency:* Ethereum\n";
     responseMsg += "*Amount:* " + convertToEthereum(parseInt(data.result, 10)) + " ETH";
     response.status(200).send(responseMsg);
