@@ -9,17 +9,22 @@ function getBalance(request, response) {
   BalanceService.getEthereumBalance(request.body.text).then((data) => {
     var responseMsg  = "*Address:* " + request.body.text + "\n";
     responseMsg += "*Currency:* Ethereum\n";
-    responseMsg += "*Amount:* " + convertToEthereum(parseFloat(data.result)) + " ETH";
+    responseMsg += "*Amount:* ";
+    responseMsg += convertToEthereum(parseFloat(data.result));
+    responseMsg += " ETH";
     var json = {
         "response_type": "in_channel",
-        "text": responseMsg,
+        "text": responseMsg
     }
     response.status(200).send(json);
   });
 }
 
 function convertToEthereum(amount) {
-  return (amount / 1000000000000.0);
+  var amountDivided = amount / 1000000000000.0;
+  console.log("Amount: " + amount);
+  console.log("Amount Divided: " + amountDivided);
+  return amountDivided;
 }
 
 module.exports = router;
