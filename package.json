@@ -1,0 +1,33 @@
+{
+  "name": "crypto-noobs",
+  "version": "1.0.0",
+  "description": "API Layer for Crypto Noobs Slack, App and other Channels",
+  "main": "app.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HarbyUK/crypto-noobs.git"
+  },
+  "keywords": [
+    "crypto",
+    "ethereum",
+    "bitcoin",
+    "altcoin",
+    "litecoin",
+    "cryptocurrency",
+    "currency",
+    "yourmumontoast"
+  ],
+  "author": "Scott McKenna",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HarbyUK/crypto-noobs/issues"
+  },
+  "homepage": "https://github.com/HarbyUK/crypto-noobs#readme",
+  "dependencies": {
+    "Express": "^3.0.1",
+    "express": "^4.16.2"
+  }
+}
