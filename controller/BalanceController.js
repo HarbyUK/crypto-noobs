@@ -21,7 +21,7 @@ function getBalance(request, response) {
 }
 
 function convertToEthereum(amount) {
-  var amountDivided = amount / 1000000000000.0;
+  var amountDivided = amount / 1000000000000000000.0;
   console.log("Amount: " + amount);
   console.log("Amount Divided: " + amountDivided);
   return amountDivided;
