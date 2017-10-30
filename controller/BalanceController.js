@@ -9,7 +9,7 @@ function getBalance(request, response) {
   BalanceService.getEthereumBalance(request.body.text).then((data) => {
     var responseMsg  = "*Address:* " + request.body.text + "\n";
     responseMsg += "*Currency:* Ethereum\n";
-    responseMsg += "*Amount:* " + convertToEthereum(parseInt(data.result, 10)) + " ETH";
+    responseMsg += "*Amount:* " + convertToEthereum(parseFloat(data.result)) + " ETH";
     var json = {
         "response_type": "in_channel",
         "text": responseMsg,
@@ -19,7 +19,7 @@ function getBalance(request, response) {
 }
 
 function convertToEthereum(amount) {
-  return (amount / 1000000000000);
+  return (amount / 1000000000000.0);
 }
 
 module.exports = router;
