@@ -28,6 +28,7 @@
   "homepage": "https://github.com/HarbyUK/crypto-noobs#readme",
   "dependencies": {
     "Express": "^3.0.1",
+    "body-parser": "^1.18.2",
     "express": "^4.16.2"
   }
 }
